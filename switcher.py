@@ -1,5 +1,6 @@
 import os
 import json
+import argparse
 from getpass import getpass
 from datetime import date
 
@@ -11,6 +12,11 @@ homedir = os.path.expanduser('~')
 aws_credentials_master = homedir + "/.aws/credentials"
 template = {'profile': '[default]', 'output = ': 'json', 'region = ': 'eu-west-1'}
 
+parser = argparse.ArgumentParser(description='')
+parser.add_argument('--config', type=str, help='What config.json to use - defaults to ./config.json', default='./config.json')
+args = parser.parse_args()
+config = args.config
+
 
 # For logging outputs
 def log(level, message):
@@ -18,7 +24,7 @@ def log(level, message):
 
 
 def get_json():
-    with open('./profiles.json', 'r') as json_file:
+    with open(config, 'r') as json_file:
         global profile_object
         profile_object = json.load(json_file)
         return profile_object
