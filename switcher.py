@@ -14,7 +14,7 @@ aws_credentials_master = homedir + "/.aws/credentials"
 template = {'profile': '[default]', 'output = ': 'json', 'region = ': 'eu-west-1'}
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('--config', type=str, help='What config.json to use - defaults to ./config.json', default='./config.json')
+parser.add_argument('--config', type=str, help='What profiles.json to use - defaults to ./profiles.json', default='./profiles.json')
 args = parser.parse_args()
 config = args.config
 
