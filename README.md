@@ -5,6 +5,11 @@
 
 Repository to allow you to switch to various AWS Accounts, rotate your access keys and assume roles on the command line without the need of exporting those pesky bash env vars!
 
+### Usage
+
+Run `python switcher.py`
+
+Or, to specify a config location, you can do `python switcher.py --config=/some/path`
 ### Components
 * switcher.py
 * profiles.json
@@ -25,7 +30,7 @@ Repository to allow you to switch to various AWS Accounts, rotate your access ke
 `SIDE-NOTE: Durarion is in seconds...3600 for an hour is the default`
 
 ### profiles.json example
-`
+```
 {
   "profiles": [
     {
@@ -50,4 +55,4 @@ Repository to allow you to switch to various AWS Accounts, rotate your access ke
     }
   ]
 }
-`
+```
