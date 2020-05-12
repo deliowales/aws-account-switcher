@@ -51,7 +51,8 @@ Or, to specify a config location, you can do `python switcher.py --config=/some/
       "aws_access_key_id": "WORKACCESSKEY",
       "aws_secret_access_key": "WORKSECRETACCESSKEY",
       "mfa": "arn:aws:iam::0011223355:mfa/someone@example.com",
-      "duration": ""
+      "duration": "",
+      "assume_role_account_number":"288011227077"
     }
   ]
 }
