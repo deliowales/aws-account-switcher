@@ -1,5 +1,6 @@
 import os
 import json
+import sys
 from getpass import getpass
 from datetime import date
 
@@ -169,7 +170,7 @@ def write_session(command):
 
 
 if __name__ == '__main__':
-    account_decision = input(ask_the_question())
+    account_decision = sys.argv[1] if len(sys.argv) > 1 else input(ask_the_question())
     write_standard_account(account_decision)
     rotate_keys()
     question = '[INFO]: Would you like to assume the {} role?\n[1] YES\n[2] NO\n[INPUT]: '
@@ -177,7 +178,7 @@ if __name__ == '__main__':
     aws_vars = ""
 
     if profile_json['role'] != "":
-        decider = input(question.format(profile_json['role']))
+        decider = sys.argv[2] if len(sys.argv) > 2 else input(question.format(profile_json['role']))
         if str(decider) == "1":
             aws_vars = write_session(assume_role())
         else:
